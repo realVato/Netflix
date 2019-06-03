@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #000;
+}
+
+/* Typography */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #999;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+    color: #fff;
+}
+
+img {
+    width: 100%;
+}
+
+i {
+    margin-left: 0.3rem;
+}
+
+/* Utilities */
+.underline {
+    text-decoration: underline;
+}
+
+/* Showcase */
+.showcase {
+    height: 100vh;
+    background: url('/img/showcase.jpg') no-repeat center center/cover;
+}
+
+.showcase::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: inset 0px 0px 200px 120px rgba(0, 0, 0, 0.88);
+    z-index: 1;
+}
+
+.showcase-top {
+    position: relative;
+    height: 90px;
+}
+
+.showcase-top .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 170px;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.showcase-top .signin {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.showcase-top .signin a {
+    padding: 0.6rem 1.4rem;
+    background-color: red;
+    border-radius: 0.4rem;
+}
+
+.showcase-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.showcase-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.showcase-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.showcase-content .btn-main-showcase {
+    background-color: red;
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding: 1.5rem 1rem;
+    border-radius: 0.4rem;
+}
