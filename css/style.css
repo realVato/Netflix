@@ -11,6 +11,17 @@ body {
     background-color: #000;
 }
 
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+	display: none;
+	
+}
+
+.show {
+    display: block !important;
+    opacity: 1;
+}
 /* Typography */
 a {
     text-decoration: none;
@@ -143,7 +154,7 @@ i {
     cursor: pointer;
 }
 
-.grid-tab .show {
+.grid-tab .show-border {
     border-bottom: 5px solid red;
 }
 
@@ -164,9 +175,13 @@ i {
 /* Grid-tab content */
 .grid-tab-content {
     max-width: 70%;
-    margin: 3rem auto 30vh auto;
+    margin: 3rem auto 7vh auto;
 }
 /* TAB1 */
+.grid-tab-content .flex {
+    display: flex;
+}
+
 .grid-tab-content .tab1-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -296,3 +311,5 @@ i {
     text-decoration: underline;
     color: rgb(87, 85, 85);
   }
+
+  
