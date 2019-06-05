@@ -43,6 +43,17 @@ i {
     text-decoration: underline;
 }
 
+.inline {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+.highlight {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
 /* Showcase */
 .showcase {
     height: 100vh;
@@ -120,7 +131,7 @@ i {
 /* Grid-Tab */
 .grid-tab {
     display: grid;
-    max-width: 70%;
+    max-width: 80%;
     margin: auto;
     padding: 2rem 0;
     text-align: center;
@@ -149,3 +160,106 @@ i {
 .grid-tab .tab-item:hover p {
     color: #fff;
 }
+
+/* Grid-tab content */
+.grid-tab-content {
+    max-width: 70%;
+    margin: 3rem auto 30vh auto;
+}
+/* TAB1 */
+.grid-tab-content .tab1-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.grid-tab-content .tab1-content p {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.grid-tab-content .tab1-content a {
+    display: block;
+    text-align: center;
+    width: 50%;
+    background-color: red;
+    border-radius: 0.4rem;
+    padding: 0.6rem 1.4rem;
+    margin-top: 1.2rem;
+}
+/* TAB2 */
+.grid-tab-content .tab2-content .inline p {
+    font-size: 2rem;
+}
+
+.grid-tab-content .tab2-content a {
+    text-align: center;
+    width: 100%;
+    background-color: red;
+    border-radius: 0.4rem;
+    padding: 0.6rem 1.4rem;
+    margin: auto;
+}
+
+.grid-tab-content .tab2-content .tab2-content-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.grid-tab-content .tab2-content .tab2-content-description {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+}
+
+.grid-tab-content .tab2-content .tab2-content-description p {
+    color: #999;
+}
+/* TAB3 */
+.grid-tab-content .tab3-content {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.grid-tab-content .tab3-content a {
+    text-align: center;
+    width: 100%;
+    background-color: red;
+    border-radius: 0.4rem;
+    padding: 0.6rem 1.4rem;
+    margin: auto;
+} 
+
+.table {
+    color: #999;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.table i {
+    color: #999;
+}
+
+.table thead {
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #222;
+}
+
+.table tbody tr td:first-child {
+    text-align: left;
+}
+
+.table td {
+    padding: 0.4rem;
+}
+
