@@ -10,17 +10,20 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: #000;
 }
-
+/* JS */
 #tab-1-content,
 #tab-2-content,
 #tab-3-content {
 	display: none;
-	
 }
 
 .show {
     display: block !important;
     opacity: 1;
+}
+
+.hide-on-large {
+    display: none;
 }
 /* Typography */
 a {
@@ -58,11 +61,6 @@ i {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 1.5rem;
-}
-
-.highlight {
-    font-size: 1.5rem;
-    color: #fff;
 }
 
 /* Showcase */
@@ -142,11 +140,12 @@ i {
 /* Grid-Tab */
 .grid-tab {
     display: grid;
-    max-width: 80%;
+    width: 80%;
     margin: auto;
     padding: 2rem 0;
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
+    overflow-x: hidden;
 }
 
 .grid-tab .tab-item {
@@ -174,8 +173,9 @@ i {
 
 /* Grid-tab content */
 .grid-tab-content {
-    max-width: 70%;
+    width: 70%;
     margin: 3rem auto 7vh auto;
+    overflow-x: hidden;
 }
 /* TAB1 */
 .grid-tab-content .flex {
@@ -234,11 +234,21 @@ i {
 .grid-tab-content .tab2-content .tab2-content-description p {
     color: #999;
 }
+
+.grid-tab-content .tab2-content .tab2-content-description .tab2-content-text .highlight {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
 /* TAB3 */
 .grid-tab-content .tab3-content {
-    width: 70%;
+    width: 100%;
     margin: auto;
     text-align: center;
+}
+
+.grid-tab-content .tab3-content p {
+    font-size: 2rem;
 }
 
 .grid-tab-content .tab3-content a {
@@ -256,6 +266,7 @@ i {
     margin-top: 2rem;
     text-align: center;
     border-collapse: collapse;
+    overflow-x: auto;
 }
 
 .table i {
@@ -280,8 +291,10 @@ i {
 
 /* Footer grid */
 .faq {
-    max-width: 50%;
+    width: 50%;
     margin: 5vh auto 5vh auto;
+    border-top: 2px solid red;
+    padding-top: 2rem;
 }
 
 .faq span {
@@ -312,4 +325,256 @@ i {
     color: rgb(87, 85, 85);
   }
 
-  
+  /* Media Query */
+  @media (max-width: 800px) {
+    .hide-on-small {
+        display: none !important;
+    }
+
+    .show-on-small {
+        display: block;
+    }
+
+    /* Showcase */
+    .showcase-top .logo {
+        top: 30%;
+        left: 5%;
+        width: 100px;
+        transform: translate(0);
+    }
+
+    .showcase-top .signin {
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        z-index: 2;
+        transform: translate(0);
+    }
+
+    .showcase::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.88);
+        z-index: 1;
+    }
+
+    .showcase-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .showcase-content h3 {
+        display: none;
+    }
+
+    .showcase-content .btn-main-showcase {
+        width: 100%;
+    }
+    /* Grid-tab */
+    .grid-tab {
+        width: 100%;
+    }
+    /* Grid-tab contentt */
+    .grid-tab-content {
+        width: 90%;
+        margin: 3rem auto 7vh auto;
+    }
+    /* TAB1 */
+    .grid-tab-content .flex {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .grid-tab-content .tab1-content {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-tab-content .tab1-content a {
+        width: 100%;
+    }
+    /* TAB2 */
+    .inline {
+        display: block;
+    }
+
+    .grid-tab-content .tab2-content .inline p {
+        font-size: 1.5rem;
+    }
+
+    .grid-tab-content .tab2-content .inline a {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .grid-tab-content .tab2-content .tab2-content-items {
+        grid-template-columns: 1fr;
+    }
+    /* TAB3 */
+    .grid-tab-content .tab3-content a {
+        display: block;
+        margin-top: 2rem;
+    } 
+
+    /* Footer grid */
+    .faq {
+        text-align: center;
+    }
+
+    .table tbody tr td:first-child {
+        text-align: center;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        display: none;
+    }
+    
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        border-bottom: 1px solid #eee;
+        position: relative;
+        margin-left: 150px;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 150px;
+        margin-left: -150px;
+    }
+
+    td:nth-of-type(2):before {
+        content: 'Paprastas';
+        color: #fff;
+    }
+    td:nth-of-type(3):before {
+        content: 'Standartinis';
+        color: #fff;
+    }
+    td:nth-of-type(4):before {
+        content: 'Premiumas';
+        color: #fff;
+    }
+}
+
+@media (max-width: 350px) {
+    .grid-tab {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-height: 500px) {
+    .hide-on-small {
+        display: none !important;
+    }
+
+    .show-on-small {
+        display: block;
+    }
+
+    /* Showcase */
+    .showcase-top .logo {
+        top: 30%;
+        left: 5%;
+        width: 100px;
+        transform: translate(0);
+    }
+
+    .showcase-top .signin {
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        z-index: 2;
+        transform: translate(0);
+    }
+
+    .showcase::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.88);
+        z-index: 1;
+    }
+
+    .showcase-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .showcase-content h3 {
+        display: none;
+    }
+
+    .showcase-content .btn-main-showcase {
+        width: 100%;
+    }
+    /* Grid-tab */
+    .grid-tab {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    /* Grid-tab contentt */
+    .grid-tab-content {
+        width: 90%;
+        margin: 3rem auto 7vh auto;
+    }
+    /* TAB1 */
+    .grid-tab-content .flex {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .grid-tab-content .tab1-content {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-tab-content .tab1-content a {
+        width: 100%;
+    }
+    /* TAB2 */
+    .inline {
+        display: block;
+    }
+
+    .grid-tab-content .tab2-content .inline p {
+        font-size: 1.5rem;
+    }
+
+    .grid-tab-content .tab2-content .inline a {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .grid-tab-content .tab2-content .tab2-content-items {
+        grid-template-columns: 1fr;
+    }
+    /* TAB3 */
+    .grid-tab-content .tab3-content a {
+        display: block;
+        margin-top: 2rem;
+    } 
+
+    /* Footer grid */
+    .faq {
+        text-align: center;
+    }
+}
